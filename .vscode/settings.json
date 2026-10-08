@@ -1,4 +1,5 @@
 {
     "workbench.settings.showAISearchToggle": false,
-    "editor.bracketPairColorization.enabled": false
+    "editor.bracketPairColorization.enabled": false,
+    "liveServer.settings.port": 5501
 }
