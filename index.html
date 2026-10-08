@@ -9,8 +9,9 @@
       <title> Tyler Perlman - Portfolio</title>
   </head>
   <body>
+     <!-- Chapter 2 -->
       <!-- Header / Hero Section -->
-      <!-- Chapter 2 -->
+     
       <header> 
         <h1>Tyler Perlman</h1>
         <h2>Web Developer & Designer</h2>
@@ -107,9 +108,8 @@
           </tbody>
         </table>
       </section>
-
+<!-- Chapter 5 -->
       <!-- Skills Section -->
-       <!-- Chapter 5 -->
       <section id="skills">
         <h2>Skills</h2>
         <h3>Technical Skills</h3>
@@ -152,11 +152,35 @@
           </li>
         </ol>
       </section>
-
+ <!-- Chapter 7 -->
       <!-- Contact Section -->
       <section id="contact">
         <h2>Contact</h2>
-      </section>
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+       <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+       <fieldset>
+          <legend>Projects Details</legend>
+       <select name="projectType">
+       <option>Website</option>
+       <option>Portfolio</option>
+       <option>Web App</option>
+       <option>Other</option>
+        </select>
+      <label>Budget</label>
+       <input type="radio" name="budget" value="1k-5k">$1k-$5k
+       <input type="radio" name="budget" value="5k-15k">$5k-$15k
+       <input type="radio" name="budget" value="15k+">$15k+
+         </fieldset>
+       <label>
+        <input type="checkbox" name="newsletter"> Subscribe to updates</label>
+        <button type="submit">Send Message</button>
+        <button type="reset">Clear Form</button>
+       <button type="button" onclick="window.print();">Print</button>
+        </form>
+      
+     
       </main>
 
       <!-- Footer -->
