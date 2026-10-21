@@ -110,3 +110,67 @@ blockquote {
 body {
     line-height: 1.6;
 }
+
+/* Chapter 11 */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.skills-list li {
+    font-size: 0.9rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+.timeline {
+list-style: none;
+counter-reset: year;
+}
+
+.timeline li {
+    padding-left: 40px;
+    border-left: 3px solid var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline li::before {
+    counter-increment: year;
+    content: counter(year);
+    position: absolute;
+    left: -18px;
+    top: 0;
+    background var(--primary);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
