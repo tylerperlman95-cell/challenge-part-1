@@ -58,6 +58,7 @@ section {
 }
 
 /* Chapter 13 */
+/* Chapter 14 */
 nav {
     padding: 15px 0;
     position: sticky;
@@ -69,11 +70,15 @@ nav {
 
 nav ul {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     gap: 30px;
-    list-style: none;
+    align-items: center;
     padding: 0;
     margin: 0;
+}
+
+nav li {
+    list-style: none;
 }
 
 .container {
@@ -93,8 +98,11 @@ aside {
     position: relative;
 }
 
+/* Tables */
 table {
     border: 1px solid #cbd5e1;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 img {
@@ -161,11 +169,7 @@ blockquote {
     font-size: 0.9rem;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
+/* Table styling */
 th, td {
     padding: 14px 18px;
     text-align: left;
@@ -180,6 +184,7 @@ tr:nth-child(even) {
     background: #f1f5f9;
 }
 
+/* Timeline */
 .timeline {
     list-style: none;
     counter-reset: year;
@@ -226,26 +231,49 @@ form {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
+/* Header */
 header {
     background: linear-gradient(135deg, #aec6f9 0%, #efff0f 100%);
 }
 
+/* Footer: same blue as navigation */
 footer {
-    background: linear-gradient(to right, #aec6f9 0%, #efff0f 100%);
+    background: rgb(14, 14, 215);
+    color: #facc15;
+    padding: 25px 20px;
+    text-align: center;
 }
 
+/* Footer links: golden yellow */
+footer a,
+footer a:visited,
+footer button {
+    color: #facc15;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Footer hover effects */
+footer a:hover,
+footer button:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Buttons */
 button {
     transition: background 0.3s, transform 0.2s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 button:hover {
     background: #bccffd;
     transform: scale(1.05);
+}
+
+/* Project card hover */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Chapter 13 */
@@ -259,9 +287,43 @@ button:hover {
     border-radius: 20px;
 }
 
+/* Navigation layout */
 nav {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 20px;
+}
+
+/* Chapter 14 */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    .skills-list {
+        gap: 8px;
+    }
+
+    .skills-list li {
+        padding: 6px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 }
