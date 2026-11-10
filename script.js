@@ -16,12 +16,6 @@ document.getElementById("year").textContent = getCurrentYear();
 
 document.getElementById("last-updated").textContent = new Date().toLocaleString();
 
-document.getElementById("year").textContent = new Date().toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric"
-});
-
 function sayHello() {
     alert("Thanks for visiting!");
 }
@@ -35,18 +29,56 @@ document.getElementById("clearConsoleButton").addEventListener("click", function
 });
 
 // Chapter 16 
-
-function calculateExperience(startYear) {
-    const currentDate = new Date();
-    const startDate = new Date(startYear, 0, 1);
+function calculateExperience(startYear, startMonth, endDate = new Date()) {
+    const startDate = new Date(startYear, startMonth, 1);
     const totalMonths =
-        (currentDate.getFullYear() - startDate.getFullYear()) * 12
-        + (currentDate.getMonth() - startDate.getMonth());
+        (endDate.getFullYear() - startDate.getFullYear()) * 12
+        + (endDate.getMonth() - startDate.getMonth());
     return totalMonths;
 }
-const experienceMonths = calculateExperience(2025);
-const years = Math.floor(experienceMonths / 12);
-const months = experienceMonths % 12;
-document.getElementById("expYears").textContent =
-    years + " years and " + months + " months";
+// Graphic Design Experience
+const designMonths = calculateExperience(2025, 8, new Date(2026, 6, 1));
+const designYears = Math.floor(designMonths / 12);
+const designRemainder = designMonths % 12;
+document.getElementById("designExp").textContent =
+    designYears + " years and " + designRemainder + " months";
+// Coding Experience
+const codingMonths = calculateExperience(2026, 8);
+const codingYears = Math.floor(codingMonths / 12);
+const codingRemainder = codingMonths % 12;
+document.getElementById("codingExp").textContent =
+    codingYears + " years and " + codingRemainder + " months";
 
+
+function updateProjectCount() {
+    const projectRows = document.querySelectorAll('#projectTableBody tr');
+    console.log(projectRows.length);
+    document.getElementById("projectCount").textContent =
+        "Total Projects: " + projectRows.length;
+    document.getElementById("projectBadge").textContent = projectRows.length;
+}
+updateProjectCount();
+const projectTable = document.getElementById("projectTableBody");
+const observer = new MutationObserver(updateProjectCount);
+observer.observe(projectTable, { childList: true });
+
+
+function validateForm() {
+    const name = document.querySelector('[name="name"]').value.trim();
+    const email = document.querySelector('[name="email"]').value.trim();
+    const message = document.querySelector('[name="message"]').value.trim();
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields");
+        return false;
+    }
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+    if (message.length < 10) {
+        alert("Your message must be at least 10 characters long");
+        return false;
+    }
+    alert("Message sent!");
+    return false;
+}

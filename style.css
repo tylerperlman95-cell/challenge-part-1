@@ -12,8 +12,11 @@ body {
     color: #1e293b;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    margin: 0;
+    text-align: center;
 }
 
+/* Headings */
 h1 {
     color: #2563eb;
     font-size: 2.5rem;
@@ -31,10 +34,13 @@ h3 {
     font-weight: 600;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: Georgia, "Times New Roman", serif;
 }
 
+/* Links */
 a {
     color: var(--primary);
     text-decoration: none;
@@ -52,86 +58,42 @@ a:visited {
 
 /* Chapter 9 */
 section {
-    padding: 60px 0;
-    margin-bottom: 0;
+    padding: 60px 20px;
+    margin: 0 auto;
     border-bottom: 1px solid #e2e8f0;
+    text-align: center;
 }
 
 /* Chapter 13 */
 /* Chapter 14 */
+
+/* Navigation */
 nav {
-    padding: 15px 0;
+    padding: 20px;
     position: sticky;
     top: 0;
     z-index: 100;
     background: rgb(14, 14, 215);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 30px;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
 nav li {
     list-style: none;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-aside {
-    border-left: 4px solid #f59e0b;
-    padding-left: 20px;
-}
-
-.project-card {
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    position: relative;
-}
-
-/* Tables */
-table {
-    border: 1px solid #cbd5e1;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-img {
-    border-radius: 6px;
-}
-
-/* Chapter 10 */
-code, pre {
-    font-family: "Courier New", monospace;
-}
-
-input, textarea, select, button {
-    font-family: inherit;
-}
-
-html {
-    font-size: 16px;
-}
-
-p {
-    font-size: 1rem;
-}
-
-.tagline {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Navigation text */
 nav a {
     color: yellow;
     text-transform: uppercase;
@@ -147,32 +109,45 @@ nav a:hover {
     color: #f59e0b;
 }
 
-blockquote {
-    font-style: italic;
-    line-height: 1.8;
+/* Main container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
-/* Chapter 11 */
-.skills-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    background: var(--primary);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    margin: 0;
+/* Aside */
+aside {
+    border-left: 4px solid #f59e0b;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
 }
 
-.skills-list li {
-    font-size: 0.9rem;
+/* Project cards */
+.project-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Table styling */
-th, td {
+/* Tables */
+table {
+    border: 1px solid #cbd5e1;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+th,
+td {
     padding: 14px 18px;
-    text-align: left;
+    text-align: center;
 }
 
 th {
@@ -184,17 +159,90 @@ tr:nth-child(even) {
     background: #f1f5f9;
 }
 
+/* Images */
+img {
+    border-radius: 6px;
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Chapter 10 */
+code,
+pre {
+    font-family: "Courier New", monospace;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+}
+
+html {
+    font-size: 16px;
+}
+
+p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Tagline */
+.tagline {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Blockquote */
+blockquote {
+    font-style: italic;
+    line-height: 1.8;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Chapter 11 */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: fit-content;
+    max-width: 90%;
+}
+
+.skills-list li {
+    font-size: 0.9rem;
+}
+
 /* Timeline */
 .timeline {
     list-style: none;
     counter-reset: year;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0;
+    text-align: center;
 }
 
 .timeline li {
-    padding-left: 40px;
+    padding: 15px;
     border-left: 3px solid var(--primary);
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     position: relative;
+    text-align: center;
 }
 
 .timeline li::before {
@@ -221,22 +269,24 @@ tr:nth-child(even) {
 
 .profile-img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-table {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: block;
+    margin: 20px auto;
 }
 
 form {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin: 20px auto;
+    text-align: center;
 }
 
 /* Header */
 header {
     background: linear-gradient(135deg, #aec6f9 0%, #efff0f 100%);
+    text-align: center;
+    padding: 30px 20px;
 }
 
-/* Footer: same blue as navigation */
+/* Footer */
 footer {
     background: rgb(14, 14, 215);
     color: #facc15;
@@ -244,7 +294,6 @@ footer {
     text-align: center;
 }
 
-/* Footer links: golden yellow */
 footer a,
 footer a:visited,
 footer button {
@@ -253,7 +302,6 @@ footer button {
     transition: color 0.3s ease;
 }
 
-/* Footer hover effects */
 footer a:hover,
 footer button:hover {
     color: #ffffff;
@@ -263,6 +311,7 @@ footer button:hover {
 /* Buttons */
 button {
     transition: background 0.3s, transform 0.2s;
+    margin: 10px auto;
 }
 
 button:hover {
@@ -287,25 +336,20 @@ button:hover {
     border-radius: 20px;
 }
 
-/* Navigation layout */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-}
-
 /* Chapter 14 */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
 }
 
 /* Responsive layout */
@@ -326,4 +370,30 @@ nav {
         flex-wrap: wrap;
         gap: 15px;
     }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Chapter 16 */
+header video {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#skills li {
+    text-align: center;
+}
+
+#skills {
+    text-align: center;
 }

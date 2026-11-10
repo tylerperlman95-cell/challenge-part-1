@@ -74,9 +74,10 @@
     </section>
 
     <!-- Projects Section -->
+
     <section id="projects">
       <div class="container">
-        <h2>Projects</h2>
+        <h2>Projects <span class="badge" id="projectBadge"></span></h2>
         <div class="projects-grid">
           <figure class="project-card">
             <span class="badge">Featured</span>
@@ -92,7 +93,7 @@
             <figcaption>Project 3</figcaption>
           </figure>
         </div>
-
+        <p id="projectCount"></p>
         <table>
           <thead>
             <tr>
@@ -102,7 +103,7 @@
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="projectTableBody">
             <tr>
               <td>Personal Website</td>
               <td>HTML, CSS</td>
@@ -150,27 +151,28 @@
       <div class="container">
         <h3>Career Timeline</h3>
         <!-- Chapter 16 -->
-        <p>Coding Experience: <Span id="expYears">0</Span></p>
+        <p>Graphic Design Experience: <span id="designExp"></span></p>
+        <p>Coding Experience: <span id="codingExp"></span></p>
         <ol class="timeline">
           <li>
             <strong>Computer Information Specialist</strong>
-            <Mem>2028</em>
-              Working at a retail store that fixes technology.
+            <em>2028</em>
+            Working at a retail store that fixes technology.
           </li>
           <li>
             <strong> Having an internship</strong>
-            Working with someone who fixes technology as their job.
             <em>2027</em>
+            Working with someone who fixes technology as their job.
           </li>
           <li>
             <strong>Learning Visual Studio Code and Git Hub </strong>
-            I will be learning how to use and get a better understanding CS Code and Git Hub.
             <em>2026</em>
+            I will be learning how to use and get a better understanding of VS Code and Git Hub.
           </li>
           <li>
             <strong> Learning how to Graphic Design</strong>
-            I learned how to use Adobe Illustrator and Adobe Photoshop to redisgn photos.
             <em>2025</em>
+            I learned how to use Adobe Illustrator and Adobe Photoshop to redisgn photos.
           </li>
         </ol>
       </div>
@@ -180,7 +182,7 @@
     <section id="contact">
       <div class="container">
         <h2>Contact</h2>
-        <form action="#" method="POST">
+        <form action="#" method="POST" onsubmit="return validateForm()">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" rows="5" placeholder="Your Message"></textarea>
