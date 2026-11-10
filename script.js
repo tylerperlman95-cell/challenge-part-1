@@ -112,7 +112,6 @@ function toggleTheme() {
 
 const extraSkills = ["JavaScript", "React", "Node.js", "Git"];
 const skillsList = document.getElementById("skillsList");
-// Modding: Use forEach() instead of a for loop
 extraSkills.forEach(function (skill) {
     const alreadyExists = Array.from(skillsList.children)
         .some(item => item.textContent.trim() === skill);
