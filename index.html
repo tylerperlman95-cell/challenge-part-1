@@ -40,6 +40,8 @@
 
     </ul>
   </nav>
+  <!-- Chapter 17 -->
+  <button onclick="toggleTheme()">Toggle Theme</button>
   <!-- Chapter 4 -->
   <main>
     <!-- Chapter 6 -->
@@ -78,17 +80,22 @@
     <section id="projects">
       <div class="container">
         <h2>Projects <span class="badge" id="projectBadge"></span></h2>
+        <select onchange="filterProjects(this.value)">
+          <option value="all">All</option>
+          <option value="web">Web</option>
+          <option value="app">App</option>
+        </select>
         <div class="projects-grid">
-          <figure class="project-card">
+          <figure class="project-card" data-category="web">
             <span class="badge">Featured</span>
             <img src="https://placehold.co/200x200" alt="Placeholder for project 1" width="200" height="200">
             <figcaption>Project 1</figcaption>
           </figure>
-          <figure class="project-card">
+          <figure class="project-card" data-category="app">
             <img src="https://placehold.co/200x200" alt="Placeholder for project 2" width="200" height="200">
             <figcaption>Project 2</figcaption>
           </figure>
-          <figure class="project-card">
+          <figure class="project-card" data-category="web">
             <img src="https://placehold.co/200x200" alt="Placeholder for project 3" width="200" height="200">
             <figcaption>Project 3</figcaption>
           </figure>
@@ -132,17 +139,13 @@
       <div class="container">
         <h2>Skills</h2>
         <h3>Technical Skills</h3>
-        <ul class="skils-list">
+        <ul class="skills-list" id="skillsList">
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
           <li>Python</li>
           <li>Git</li>
           <li>PHP
-            <ul>
-              <li>Forms</li>
-              <li>Tables</li>
-            </ul>
           </li>
         </ul>
       </div>

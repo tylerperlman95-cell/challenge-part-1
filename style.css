@@ -3,6 +3,20 @@
     --primary: #2563eb;
     --accent: #f59e0b;
     --dark: #1e293b;
+
+    /* Normal heading colors */
+    --heading-h1: #0b36f7;
+    ;
+    --heading-h2: #0b36f7;
+    ;
+    --heading-h3: #0b36f7;
+}
+
+/* Dark theme heading colors */
+.dark-theme {
+    --heading-h1: #0b36f7;
+    --heading-h2: #0b36f7;
+    --heading-h3: #facc15;
 }
 
 /* Chapter 10 */
@@ -18,20 +32,21 @@ body {
 
 /* Headings */
 h1 {
-    color: #2563eb;
+    color: var(--heading-h1);
     font-size: 2.5rem;
 }
 
 h2 {
-    color: #1e40af;
+    color: var(--heading-h2);
     margin-bottom: 20px;
     margin-top: 0;
     font-size: 2rem;
 }
 
 h3 {
-    color: #475569;
+    color: var(--heading-h3);
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 h1,
@@ -396,4 +411,9 @@ header video {
 
 #skills {
     text-align: center;
+}
+
+/* Chapter 17 */
+.dark-theme p {
+    color: #0ca7db
 }

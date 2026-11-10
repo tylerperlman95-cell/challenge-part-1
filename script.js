@@ -82,3 +82,64 @@ function validateForm() {
     alert("Message sent!");
     return false;
 }
+
+// Chapter 17
+let isDark = localStorage.getItem("theme") === "dark";
+
+// Apply saved theme when the page loads
+if (isDark) {
+    document.body.classList.add("dark-theme");
+    document.body.style.background = "#1e293b";
+    document.body.style.color = "#f8fafc";
+}
+
+function toggleTheme() {
+    if (!isDark) {
+        document.body.classList.add("dark-theme");
+        document.body.style.background = "#1e293b";
+        document.body.style.color = "#f8fafc";
+    } else {
+        document.body.classList.remove("dark-theme");
+        document.body.style.background = "#ffffff";
+        document.body.style.color = "#222222";
+    }
+
+    isDark = !isDark;
+
+    // Save theme preference
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+const extraSkills = ["JavaScript", "React", "Node.js", "Git"];
+const skillsList = document.getElementById("skillsList");
+// Modding: Use forEach() instead of a for loop
+extraSkills.forEach(function (skill) {
+    const alreadyExists = Array.from(skillsList.children)
+        .some(item => item.textContent.trim() === skill);
+    if (!alreadyExists) {
+        const li = document.createElement("li");
+        li.textContent = skill;
+        skillsList.appendChild(li);
+    }
+});
+
+function filterProjects(category) {
+    const projects = document.querySelectorAll(".project-card");
+    projects.forEach(project => {
+        switch (category) {
+            case "web":
+                project.style.display =
+                    project.dataset.category === "web" ? "block" : "none";
+                break;
+            case "app":
+                project.style.display =
+                    project.dataset.category === "app" ? "block" : "none";
+                break;
+            case "all":
+            default:
+                project.style.display = "block";
+                break;
+        }
+    });
+}
+
