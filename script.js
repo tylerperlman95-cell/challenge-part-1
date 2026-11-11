@@ -142,3 +142,66 @@ function filterProjects(category) {
     });
 }
 
+// Chapter 18
+
+const projects = [
+    {
+        title: "Personal Website",
+        tech: "HTML, CSS, JavaScript",
+        image: "tyler.jpg",
+        description: "My personal portfolio website.",
+        featured: true,
+        year: 2026
+    },
+    {
+        title: "Practice Website",
+        tech: "HTML, CSS",
+        image: "project2.jpg",
+        description: "A website created to practice web development.",
+        featured: false,
+        year: 2026
+    },
+    {
+        title: "Web Development Project",
+        tech: "HTML, CSS, JavaScript",
+        image: "project3.jpg",
+        description: "A project demonstrating my coding skills.",
+        featured: true,
+        year: 2026
+    }
+];
+console.log(projects);
+console.log(projects[1].title);
+
+projects.sort((a, b) => a.year - b.year);
+console.log(projects);
+
+const skills = {
+    frontend: ["HTML", "CSS", "JavaScript"],
+    backend: ["Python", "Node.js", "SQL"],
+    tools: ["Git", "GitHub", "VS Code"],
+    listAll() {
+        return [...this.frontend, ...this.backend, ...this.tools];
+    }
+};
+
+console.log(skills.frontend.length);
+
+skills.backend.push("Express");
+console.log(skills.backend);
+console.log(skills.listAll());
+
+const projectsContainer = document.getElementById("projectsContainer");
+const projectCards = projects.map(project => {
+    return `
+        <div class="project-card">
+            <span>${project.featured ? "Featured" : ""}</span>
+            <img src="${project.image}" alt="${project.title}" width="200" height="200">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <p>${project.tech}</p>
+        </div>
+    `;
+});
+projectsContainer.innerHTML = projectCards.join("");
+
