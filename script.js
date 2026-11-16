@@ -248,3 +248,28 @@ setInterval(function () {
     timeOnSiteDisplay.textContent = secondsOnSite;
 }, 1000);
 
+// Chapter 20
+function welcomeMessage() {
+    alert("Thanks for exploring my portfolio!");
+}
+setTimeout(welcomeMessage, 5000);
+
+
+const visitTips = [
+    "Explore my projects!",
+    "Check out my technical skills!",
+    "Visit my About Me section!",
+    "Learn about my coding experience!"
+];
+let tipIndex = 0;
+setInterval(function () {
+    tipIndex = (tipIndex + 1) % visitTips.length;
+    document.getElementById("visitTip").textContent =
+        "Tip of the Visit: " + visitTips[tipIndex];
+}, 10000);
+
+function printPortfolio() {
+    window.print();
+}
+
+

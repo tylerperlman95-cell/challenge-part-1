@@ -417,3 +417,30 @@ header video {
 .dark-theme p {
     color: #0ca7db
 }
+
+/* Chapter 20 */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.print-summary {
+    display: block;
+}
+
+@media print {
+
+    nav,
+    button {
+        display: none !important;
+    }
+
+    .print-summary {
+        display: block !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
