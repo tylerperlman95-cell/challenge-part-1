@@ -14,8 +14,6 @@ function getCurrentYear() {
 }
 document.getElementById("year").textContent = getCurrentYear();
 
-document.getElementById("last-updated").textContent = new Date().toLocaleString();
-
 function sayHello() {
     alert("Thanks for visiting!");
 }
@@ -204,4 +202,49 @@ const projectCards = projects.map(project => {
     `;
 });
 projectsContainer.innerHTML = projectCards.join("");
+
+
+// Chapter 19
+
+function showRandomProject() {
+    const index = Math.floor(Math.random() * projects.length);
+    console.log("Today's featured project: " + projects[index].title);
+    document.getElementById("featuredProjectTitle").textContent = projects[index].title;
+}
+showRandomProject();
+
+const rawInput = "  Alex Morgan  ";
+
+const trimmedInput = rawInput.trim();
+console.log(trimmedInput);
+
+const lowerInput = trimmedInput.toLowerCase();
+console.log(lowerInput);
+
+const noNumbers = lowerInput.replace(/[0-9]/g, "");
+console.log(noNumbers);
+
+function capitalizeWords(text) {
+    return text.split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+}
+console.log(capitalizeWords(noNumbers));
+
+const now = new Date();
+const formattedDate = now.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+});
+document.querySelectorAll("#lastUpdated").forEach(element => {
+    element.textContent = formattedDate;
+});
+
+let secondsOnSite = 0;
+const timeOnSiteDisplay = document.getElementById("timeOnSite");
+setInterval(function () {
+    secondsOnSite++;
+    timeOnSiteDisplay.textContent = secondsOnSite;
+}, 1000);
 
