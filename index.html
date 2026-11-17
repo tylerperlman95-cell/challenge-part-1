@@ -33,7 +33,7 @@
 
   <nav>
     <ul>
-      <li><a href="# ">About</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -192,6 +192,7 @@
       </div>
     </section>
     <!-- Chapter 7 -->
+    <!-- Chapter 21 -->
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
@@ -199,7 +200,9 @@
         <form action="#" method="POST" onsubmit="return validateForm()">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+          <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Your Message"></textarea>
+          <p><span id="charCount">0</span> / 500</p>
+          <progress id="charProgress" value="0" max="500"></progress>
           <fieldset>
             <legend>Projects Details</legend>
             <select name="projectType">

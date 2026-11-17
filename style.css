@@ -425,7 +425,7 @@ html {
 }
 
 .print-summary {
-    display: none;
+    display: block;
 }
 
 @media print {
@@ -443,4 +443,12 @@ html {
         background: white !important;
         color: black !important;
     }
+}
+
+/* Chapter 21 */
+
+nav a.active {
+    color: yellow;
+    border-bottom: 3px solid yellow;
+    font-weight: bold;
 }

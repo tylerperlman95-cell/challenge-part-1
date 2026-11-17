@@ -166,6 +166,14 @@ const projects = [
         description: "A project demonstrating my coding skills.",
         featured: true,
         year: 2026
+    },
+    {
+        title: "Travel Destination Website",
+        tech: "HTML, CSS, JavaScript",
+        image: "projects3.jpg",
+        description: "A website showcasing travel destinations and interactive features.",
+        featured: false,
+        year: 2026
     }
 ];
 console.log(projects);
@@ -272,4 +280,81 @@ function printPortfolio() {
     window.print();
 }
 
+// Chapter 21
+const container = document.getElementById("projectsContainer");
+let visibleProjects = 3;
+function renderProjects() {
+    container.innerHTML = "";
+    projects.slice(0, visibleProjects).forEach(function (project) {
+        const card = document.createElement("div");
+        card.classList.add("project-card");
+        const img = document.createElement("img");
+        img.src = project.image;
+        img.alt = project.title;
+        const title = document.createElement("h3");
+        title.textContent = project.title;
+        const description = document.createElement("p");
+        description.textContent = project.description;
+        card.appendChild(img);
+        card.appendChild(title);
+        card.appendChild(description);
+        container.appendChild(card);
+    });
+}
+const loadMoreButton = document.createElement("button");
+loadMoreButton.textContent = "Load More";
+loadMoreButton.addEventListener("click", function () {
+    visibleProjects += 3;
+    renderProjects();
+    if (visibleProjects >= projects.length) {
+        loadMoreButton.style.display = "none";
+    }
+});
+container.insertAdjacentElement("afterend", loadMoreButton);
+renderProjects();
+if (visibleProjects >= projects.length) {
+    loadMoreButton.style.display = "none";
+}
+
+const messageInput = document.getElementById("message");
+const charCount = document.getElementById("charCount");
+const charProgress = document.getElementById("charProgress");
+messageInput.addEventListener("input", function () {
+    charCount.textContent = this.value.length;
+    charProgress.value = this.value.length;
+    if (this.value.length > 450) {
+        charCount.style.color = "red";
+    } else {
+        charCount.style.color = "black";
+    }
+});
+
+const navLinks = document.querySelectorAll("nav a");
+const navSections = Array.from(navLinks, function (link) {
+    return document.querySelector(link.getAttribute("href"));
+}).filter(Boolean);
+
+function updateActiveNavLink() {
+    let activeSection = null;
+    const lastSection = navSections[navSections.length - 1];
+    const isAtPageBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+    if (isAtPageBottom) {
+        activeSection = lastSection;
+    } else {
+        navSections.forEach(function (section) {
+            if (section.getBoundingClientRect().top <= 100) {
+                activeSection = section;
+            }
+        });
+    }
+
+    navLinks.forEach(function (link, index) {
+        link.classList.toggle("active", navSections[index] === activeSection);
+    });
+}
+
+window.addEventListener("scroll", updateActiveNavLink);
+updateActiveNavLink();
 
